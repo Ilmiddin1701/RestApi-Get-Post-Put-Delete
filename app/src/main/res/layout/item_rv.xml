@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:backgroundTint="#D6EDFF"
+    app:strokeColor="@color/black"
+    app:strokeWidth="2dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvSarlavha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:hint="@string/sarlavha"
+            android:textColor="@color/black"
+            android:textColorHint="#8F8F8F"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvBatafsil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvSarlavha"
+            android:layout_margin="8dp"
+            android:hint="@string/batafsil"
+            android:textColor="@color/black"
+            android:textColorHint="#8F8F8F"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvOxirgiMuddat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvBatafsil"
+            android:layout_margin="8dp"
+            android:hint="@string/oxirgi_muddat"
+            android:textColor="@color/black"
+            android:textColorHint="#8F8F8F"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvZarurlik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvOxirgiMuddat"
+            android:layout_margin="8dp"
+            android:hint="@string/zarurlik"
+            android:textColor="@color/black"
+            android:textColorHint="#8F8F8F"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvBajarildi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvZarurlik"
+            android:layout_margin="8dp"
+            android:hint="@string/bajarildi"
+            android:textColor="@color/black"
+            android:textColorHint="#8F8F8F"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvSana"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvBajarildi"
+            android:layout_margin="8dp"
+            android:hint="@string/sana"
+            android:textColor="@color/black"
+            android:textColorHint="#8F8F8F"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/btnMore"
+            android:layout_width="50dp"
+            android:layout_height="65dp"
+            android:src="@drawable/ic_more"
+            android:padding="5dp"
+            android:layout_alignParentEnd="true"
+            android:importantForAccessibility="no" />
+    </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>

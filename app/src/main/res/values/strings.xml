@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">RestApi - Get Post Put Delete</string>
+    <string name="sarlavha">Sarlavha</string>
+    <string name="sana">Sana</string>
+    <string name="bajarildi">Bajarildi</string>
+    <string name="zarurlik">Zarurlik</string>
+    <string name="oxirgi_muddat">Oxirgi-muddat</string>
+    <string name="batafsil">Batafsil</string>
 </resources>
