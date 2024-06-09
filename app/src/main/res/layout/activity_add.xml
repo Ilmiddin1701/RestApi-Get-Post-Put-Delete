@@ -21,10 +21,10 @@
         android:hint="@string/sarlavha"
         android:importantForAutofill="no"
         android:inputType="text"
-        android:padding="10dp"
+        android:padding="15dp"
         android:textColor="@color/black"
         android:textColorHint="#AFAFAF"
-        android:textSize="18sp" />
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/edtBatafsil"
@@ -36,10 +36,10 @@
         android:hint="@string/batafsil"
         android:importantForAutofill="no"
         android:inputType="text"
-        android:padding="10dp"
+        android:padding="15dp"
         android:textColor="@color/black"
         android:textColorHint="#AFAFAF"
-        android:textSize="18sp" />
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/edtOxirgiMuddat"
@@ -51,10 +51,10 @@
         android:hint="@string/oxirgi_muddat"
         android:importantForAutofill="no"
         android:inputType="text"
-        android:padding="10dp"
+        android:padding="15dp"
         android:textColor="@color/black"
         android:textColorHint="#AFAFAF"
-        android:textSize="18sp" />
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/edtZarurlik"
@@ -66,10 +66,10 @@
         android:hint="@string/zarurlik"
         android:importantForAutofill="no"
         android:inputType="text"
-        android:padding="10dp"
+        android:padding="15dp"
         android:textColor="@color/black"
         android:textColorHint="#AFAFAF"
-        android:textSize="18sp" />
+        android:textSize="20sp" />
 
     <Switch
         android:id="@+id/mySwitch"
@@ -78,10 +78,11 @@
         android:layout_marginTop="6dp"
         android:layout_marginBottom="6dp"
         android:background="@drawable/edt_style"
-        android:padding="10dp"
+        android:padding="15dp"
         android:text="@string/bajarildi"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="20sp"
+        android:thumb="@drawable/thumb"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <TextView

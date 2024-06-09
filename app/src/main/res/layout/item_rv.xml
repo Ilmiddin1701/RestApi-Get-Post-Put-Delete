@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
-    android:backgroundTint="#D6EDFF"
-    app:strokeColor="@color/black"
+    android:backgroundTint="#CFFFD1"
+    app:strokeColor="#4CAF50"
     app:strokeWidth="2dp">
 
     <RelativeLayout

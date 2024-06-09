@@ -7,4 +7,6 @@
     <string name="oxirgi_muddat">Oxirgi-muddat</string>
     <string name="batafsil">Batafsil</string>
     <string name="save">Save</string>
+    <string name="true1">True</string>
+    <string name="false1">False</string>
 </resources>

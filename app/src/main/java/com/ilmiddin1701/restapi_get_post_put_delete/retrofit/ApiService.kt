@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface ApiService {
-    @GET("plan/")
+    @GET("plan")
     fun getAllToDo(): Call<List<GetToDoResponse>>
 
     @POST("plan/")

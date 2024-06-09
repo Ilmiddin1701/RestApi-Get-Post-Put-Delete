@@ -1,5 +1,5 @@
 <resources>
     <style name="Base.Theme.RestApiGETPOSTPUTDELETE" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="android:statusBarColor">#CC4CAF50</item>
+        <item name="android:statusBarColor">#3F8E42</item>
     </style>
 </resources>
