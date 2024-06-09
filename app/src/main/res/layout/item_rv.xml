@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
@@ -20,7 +21,8 @@
             android:hint="@string/sarlavha"
             android:textColor="@color/black"
             android:textColorHint="#8F8F8F"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            tools:ignore="RelativeOverlap" />
 
         <TextView
             android:id="@+id/tvBatafsil"
@@ -81,9 +83,9 @@
             android:id="@+id/btnMore"
             android:layout_width="50dp"
             android:layout_height="65dp"
-            android:src="@drawable/ic_more"
-            android:padding="5dp"
             android:layout_alignParentEnd="true"
-            android:importantForAccessibility="no" />
+            android:importantForAccessibility="no"
+            android:padding="5dp"
+            android:src="@drawable/ic_more" />
     </RelativeLayout>
 </com.google.android.material.card.MaterialCardView>

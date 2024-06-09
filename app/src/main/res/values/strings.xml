@@ -3,8 +3,8 @@
     <string name="sarlavha">Sarlavha</string>
     <string name="sana">Sana</string>
     <string name="bajarildi">Bajarildi</string>
-    <string name="zarurlik">Zarurlik</string>
-    <string name="oxirgi_muddat">Oxirgi-muddat</string>
+    <string name="zarurlik">Zarurlik (shart, foydali, hayot_mamot, tavsiya)</string>
+    <string name="oxirgi_muddat">Oxirgi-muddat (2024–01–01)</string>
     <string name="batafsil">Batafsil</string>
     <string name="save">Save</string>
     <string name="true1">True</string>
