@@ -36,6 +36,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#4CAF50"
         android:importantForAccessibility="no"
+        android:src="@drawable/ic_add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.9"

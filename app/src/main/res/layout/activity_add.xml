@@ -71,36 +71,25 @@
         android:textColorHint="#AFAFAF"
         android:textSize="18sp" />
 
-    <RelativeLayout
+    <Switch
+        android:id="@+id/mySwitch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
         android:layout_marginBottom="6dp"
         android:background="@drawable/edt_style"
-        android:padding="10dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/bajarildi"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            tools:ignore="RelativeOverlap" />
-
-        <Switch
-            android:id="@+id/mySwitch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            tools:ignore="UseSwitchCompatOrMaterialXml" />
-    </RelativeLayout>
+        android:padding="10dp"
+        android:text="@string/bajarildi"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <TextView
         android:id="@+id/btnSave"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:layout_marginBottom="6dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/edt_style"
         android:clickable="true"
         android:focusable="true"
