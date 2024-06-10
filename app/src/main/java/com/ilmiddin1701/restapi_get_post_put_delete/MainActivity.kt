@@ -47,10 +47,12 @@ class MainActivity : AppCompatActivity(), RvAdapter.RvAction {
 
     override fun moreClick(getToDoResponse: GetToDoResponse, position: Int, image: ImageView) {
         val menu = PopupMenu(this, image)
+        menu.inflate(R.menu.my_menu)
         menu.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.menu_delete -> {
 
+                    onResume()
                 }
                 R.id.menu_edit -> {
                     val intent = Intent(this, AddActivity::class.java)
