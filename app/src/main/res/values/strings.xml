@@ -9,4 +9,6 @@
     <string name="save">Save</string>
     <string name="true1">True</string>
     <string name="false1">False</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
 </resources>

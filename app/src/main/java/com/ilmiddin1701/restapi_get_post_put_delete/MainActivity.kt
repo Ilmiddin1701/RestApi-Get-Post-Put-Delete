@@ -3,6 +3,7 @@ package com.ilmiddin1701.restapi_get_post_put_delete
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -45,6 +46,20 @@ class MainActivity : AppCompatActivity(), RvAdapter.RvAction {
     }
 
     override fun moreClick(getToDoResponse: GetToDoResponse, position: Int, image: ImageView) {
+        val menu = PopupMenu(this, image)
+        menu.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.menu_delete -> {
 
+                }
+                R.id.menu_edit -> {
+                    val intent = Intent(this, AddActivity::class.java)
+                    intent.putExtra("keyTodo", getToDoResponse)
+                    startActivity(intent)
+                }
+            }
+            true
+        }
+        menu.show()
     }
 }

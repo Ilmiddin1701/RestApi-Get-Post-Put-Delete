@@ -12,6 +12,9 @@ class AddActivity : AppCompatActivity() {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         setContentView(binding.root)
 
+        
+        binding.btnSave.setOnClickListener {
 
+        }
     }
 }
