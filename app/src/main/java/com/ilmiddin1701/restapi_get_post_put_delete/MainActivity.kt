@@ -25,7 +25,9 @@ class MainActivity : AppCompatActivity(), RvAdapter.RvAction {
 
         onResume()
         binding.btnAdd.setOnClickListener {
-            startActivity(Intent(this@MainActivity, AddActivity::class.java))
+            val intent = Intent(this@MainActivity, AddActivity::class.java)
+            intent.putExtra("key", 1)
+            startActivity(intent)
             finish()
         }
     }
@@ -58,6 +60,7 @@ class MainActivity : AppCompatActivity(), RvAdapter.RvAction {
                 R.id.menu_edit -> {
                     val intent = Intent(this, AddActivity::class.java)
                     intent.putExtra("keyTodo", getToDoResponse)
+                    intent.putExtra("key", 2)
                     startActivity(intent)
                     finish()
                 }
