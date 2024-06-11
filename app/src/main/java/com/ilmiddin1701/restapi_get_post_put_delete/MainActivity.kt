@@ -54,8 +54,18 @@ class MainActivity : AppCompatActivity(), RvAdapter.RvAction {
         menu.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.menu_delete -> {
-
-                    onResume()
+                    ApiClient.getApiService().deleteTodo(getToDoResponse.id)
+                        .enqueue(object : Callback<Any> {
+                            override fun onResponse(p0: Call<Any>, p1: Response<Any>) {
+                                if (p1.isSuccessful) {
+                                    Toast.makeText(this@MainActivity, "Deleted", Toast.LENGTH_SHORT).show()
+                                    onResume()
+                                }
+                            }
+                            override fun onFailure(p0: Call<Any>, p1: Throwable) {
+                                Toast.makeText(this@MainActivity, "Error", Toast.LENGTH_SHORT).show()
+                            }
+                        })
                 }
                 R.id.menu_edit -> {
                     val intent = Intent(this, AddActivity::class.java)
