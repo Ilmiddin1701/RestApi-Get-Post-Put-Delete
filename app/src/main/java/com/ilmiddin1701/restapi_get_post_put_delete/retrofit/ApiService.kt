@@ -21,5 +21,5 @@ interface ApiService {
     fun deleteTodo(@Path("id") id: Int): Call<Any>
 
     @PUT("plan/{id}/")
-    fun update(@Path("id") id: Int): Call<GetToDoResponse>
+    fun updateTodo(@Path("id") id: Int, @Body postRequestToDo: PostRequesToDo): Call<GetToDoResponse>
 }

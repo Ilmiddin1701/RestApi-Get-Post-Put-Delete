@@ -2,6 +2,7 @@ package com.ilmiddin1701.restapi_get_post_put_delete
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
@@ -28,6 +29,7 @@ class AddActivity : AppCompatActivity() {
             postTodo()
         } else {
             getToDoResponse = intent.getSerializableExtra("keyTodo") as GetToDoResponse
+            binding.mySwitch.visibility = View.VISIBLE
             editTodo()
         }
     }
@@ -71,7 +73,24 @@ class AddActivity : AppCompatActivity() {
             edtZarurlik.setText(getToDoResponse.zarurlik)
             mySwitch.isChecked = getToDoResponse.bajarildi
             btnSave.setOnClickListener {
-
+                ApiClient.getApiService().updateTodo(getToDoResponse.id,
+                    PostRequesToDo(
+                        mySwitch.isChecked,
+                        edtBatafsil.text.toString(),
+                        edtOxirgiMuddat.text.toString(),
+                        edtSarlavha.text.toString(),
+                        edtZarurlik.text.toString()
+                    )
+                ).enqueue(object : Callback<GetToDoResponse>{
+                    override fun onResponse(p0: Call<GetToDoResponse>, p1: Response<GetToDoResponse>) {
+                        Toast.makeText(this@AddActivity, "Edited", Toast.LENGTH_SHORT).show()
+                        finish()
+                        startActivity(Intent(this@AddActivity, MainActivity::class.java))
+                    }
+                    override fun onFailure(p0: Call<GetToDoResponse>, p1: Throwable) {
+                        Toast.makeText(this@AddActivity, "Error", Toast.LENGTH_SHORT).show()
+                    }
+                })
             }
         }
     }

@@ -91,6 +91,7 @@
         android:layout_marginBottom="6dp"
         android:background="@drawable/edt_style"
         android:paddingStart="10dp"
+        android:visibility="gone"
         android:paddingTop="15dp"
         android:paddingEnd="10dp"
         android:paddingBottom="15dp"
