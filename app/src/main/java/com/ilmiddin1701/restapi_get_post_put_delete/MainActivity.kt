@@ -2,15 +2,19 @@ package com.ilmiddin1701.restapi_get_post_put_delete
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.lifecycle.ViewModelProvider
+import com.ilmiddin1701.restapi_get_post_put_delete.VeiwModel.MyViewModel
 import com.ilmiddin1701.restapi_get_post_put_delete.adapters.RvAdapter
 import com.ilmiddin1701.restapi_get_post_put_delete.databinding.ActivityMainBinding
 import com.ilmiddin1701.restapi_get_post_put_delete.models.GetToDoResponse
 import com.ilmiddin1701.restapi_get_post_put_delete.retrofit.ApiClient
+import com.ilmiddin1701.restapi_get_post_put_delete.utils.Status
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -18,10 +22,13 @@ import retrofit2.Response
 class MainActivity : AppCompatActivity(), RvAdapter.RvAction {
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     private lateinit var rvAdapter: RvAdapter
+    private lateinit var myViewModel: MyViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         setContentView(binding.root)
+
+        myViewModel = ViewModelProvider(this)[MyViewModel::class.java]
 
         onResume()
         binding.btnAdd.setOnClickListener {
@@ -34,18 +41,22 @@ class MainActivity : AppCompatActivity(), RvAdapter.RvAction {
 
     override fun onResume() {
         super.onResume()
-        ApiClient.getApiService().getAllToDo()
-            .enqueue(object : Callback<List<GetToDoResponse>>{
-                override fun onResponse(p0: Call<List<GetToDoResponse>>, p1: Response<List<GetToDoResponse>>) {
-                    if (p1.isSuccessful) {
-                        rvAdapter = RvAdapter(this@MainActivity, p1.body() as ArrayList)
-                        binding.rv.adapter = rvAdapter
-                    }
+        myViewModel.getAllTodo().observe(this) {
+            when (it.status) {
+                Status.LOADING -> {
+                    binding.progressBar.visibility = View.VISIBLE
                 }
-                override fun onFailure(p0: Call<List<GetToDoResponse>>, p1: Throwable) {
-                    Toast.makeText(this@MainActivity, "Error", Toast.LENGTH_SHORT).show()
+                Status.ERROR -> {
+                    binding.progressBar.visibility = View.GONE
+                    Toast.makeText(this, it.message, Toast.LENGTH_SHORT).show()
                 }
-            })
+                Status.SUCCESS -> {
+                    binding.progressBar.visibility = View.GONE
+                    rvAdapter = RvAdapter(this, it.data as ArrayList)
+                    binding.rv.adapter = rvAdapter
+                }
+            }
+        }
     }
 
     override fun moreClick(getToDoResponse: GetToDoResponse, position: Int, image: ImageView) {

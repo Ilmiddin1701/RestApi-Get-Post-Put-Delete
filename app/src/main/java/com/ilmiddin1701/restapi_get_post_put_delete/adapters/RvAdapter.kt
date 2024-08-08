@@ -16,12 +16,11 @@ class RvAdapter(var rvAction: RvAction, private var list: ArrayList<GetToDoRespo
                 btnMore.setOnClickListener {
                     rvAction.moreClick(getToDoResponse, position, btnMore)
                 }
-                tvSarlavha.text = getToDoResponse.sarlavha
-                tvBatafsil.text = getToDoResponse.batafsil
-                tvOxirgiMuddat.text = getToDoResponse.oxirgi_muddat
-                tvZarurlik.text = getToDoResponse.zarurlik
-                tvBajarildi.text = getToDoResponse.bajarildi.toString()
-                tvSana.text = getToDoResponse.sana
+                tvSarlavha.text = "Sarlavha: " + getToDoResponse.sarlavha
+                tvOxirgiMuddat.text = "Oxirgi muddat: " + getToDoResponse.oxirgi_muddat
+                tvZarurlik.text = "Zarurlik: " + getToDoResponse.zarurlik
+                tvBajarildi.text = if (getToDoResponse.bajarildi) "Bajarilgan✅" else "Bajarilmagan❌"
+                tvSana.text = "Bugungi sana: " + getToDoResponse.sana
             }
         }
     }

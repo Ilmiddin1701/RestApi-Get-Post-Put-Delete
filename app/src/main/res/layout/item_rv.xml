@@ -6,6 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
     android:backgroundTint="#CFFFD1"
+    app:cardElevation="8dp"
     app:strokeColor="#4CAF50"
     app:strokeWidth="2dp">
 
@@ -25,21 +26,10 @@
             tools:ignore="RelativeOverlap" />
 
         <TextView
-            android:id="@+id/tvBatafsil"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tvSarlavha"
-            android:layout_margin="8dp"
-            android:hint="@string/batafsil"
-            android:textColor="@color/black"
-            android:textColorHint="#8F8F8F"
-            android:textSize="18sp" />
-
-        <TextView
             android:id="@+id/tvOxirgiMuddat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tvBatafsil"
+            android:layout_below="@id/tvSarlavha"
             android:layout_margin="8dp"
             android:hint="@string/oxirgi_muddat"
             android:textColor="@color/black"
